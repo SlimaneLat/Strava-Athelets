@@ -1,0 +1,91 @@
+{
+  "id": 129626941,
+  "username": "slimane_latreche",
+  "resource_state": 2,
+  "firstname": "Slimane",
+  "lastname": "Latreche",
+  "bio": null,
+  "city": "الدوحة",
+  "state": "",
+  "country": "Qatar",
+  "sex": "M",
+  "premium": false,
+  "summit": false,
+  "created_at": "2024-01-07T11:44:34Z",
+  "updated_at": "2024-01-07T11:46:18Z",
+  "badge_type_id": 0,
+  "weight": null,
+  "profile_medium": "https://lh3.googleusercontent.com/a/ACg8ocIyv5iAsNrUFbrT-ivfDIPYDAq5LGcS1kbi8bmWujeq=s96-c",
+  "profile": "https://lh3.googleusercontent.com/a/ACg8ocIyv5iAsNrUFbrT-ivfDIPYDAq5LGcS1kbi8bmWujeq=s96-c",
+  "friend": null,
+  "follower": null
+}{
+  "biggest_ride_distance": null,
+  "biggest_climb_elevation_gain": null,
+  "recent_ride_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0,
+    "achievement_count": 0
+  },
+  "all_ride_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0
+  },
+  "recent_run_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0,
+    "achievement_count": 0
+  },
+  "all_run_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0
+  },
+  "recent_swim_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0,
+    "achievement_count": 0
+  },
+  "all_swim_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0
+  },
+  "ytd_ride_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0
+  },
+  "ytd_run_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0
+  },
+  "ytd_swim_totals": {
+    "count": 0,
+    "distance": 0,
+    "moving_time": 0,
+    "elapsed_time": 0,
+    "elevation_gain": 0
+  }
+}
