@@ -7,11 +7,8 @@ const credentials = require("./strava-test-credentials.json");
 const range = "Sheet1"; // Update the sheet name or range as needed
 
 // Function to authenticate and upload data
-async function uploadData() {
+async function uploadData(auth) {
   try {
-    const auth = await authorize(credentials);
-    console.log("auth" + auth);
-
     // Your fake data
     const fakeData = [
       ["John", 25, "Engineer"],
@@ -43,16 +40,16 @@ async function authorize(credentials) {
     client_secret,
     redirect_uris[0]
   );
-  console.log("oAuth2Client" + oAuth2Client);
 
-  return new Promise((resolve, reject) => {
-    // Check if we have previously stored a token.
-    oAuth2Client.getToken((err, token) => {
-      if (err) return reject(err);
-      oAuth2Client.setCredentials(token);
-      resolve(oAuth2Client);
-    });
-  });
+  console.log("oAuth2Client", oAuth2Client);
+  
+  try {
+    const token = await getAccessToken(oAuth2Client);
+    oAuth2Client.setCredentials(token);
+    // Continue with whatever you need to do after authentication
+  } catch (error) {
+    console.error('Authorization error:', error);
+  }
 }
 
 // Function to append data to a sheet
@@ -85,5 +82,29 @@ async function appendDataToSheet(auth, spreadsheetId, range, resource) {
   }
 }
 
-// Call the function to upload data
-uploadData();
+function getAccessToken(oAuth2Client) {
+  return new Promise((resolve, reject) => {
+    const authUrl = oAuth2Client.generateAuthUrl({
+      access_type: 'offline',
+      scope: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+
+    console.log('Authorize this app by visiting this URL:', authUrl);
+
+    // For simplicity, you may assume that the user enters the code manually
+    const code = '...'; // Replace with the actual authorization code
+
+    oAuth2Client.getToken(code, (err, token) => {
+      if (err) {
+        console.error('Error retrieving access token:', err);
+        reject(err);
+        return;
+      }
+
+      console.log('Token obtained successfully:', token);
+      resolve(token);
+    });
+  });
+}
+
+module.exports = { uploadData };
